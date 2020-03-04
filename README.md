@@ -31,7 +31,18 @@ Things you may want to cover:
 |username|string|null: false|
 ### Association
 - has_many :posts
-- has_many :comments
+- has_many :groups_users
+- has_many :groups through: :groups_users
+
+## groups
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :groups_users
+- has_many :posts
+- has many :users though: :group_users 
 
 ## groups_usersテーブル
 
@@ -48,9 +59,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+- belongs_to :group
