@@ -1,4 +1,35 @@
 .chat-main
   .main-header
+    .main-header__left__box
+      .main-header__left__box__current__group
+        test
+      .main-header__left__box__menber__list
+        menber:投稿者
+    .main-header__right-box
+      = link_to "#", class: "edit__btn" do
+        Edit
   .messages
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          投稿者
+        .message__upper-info__time
+          投稿した日時
+      .message__text
+        おはよう
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          投稿者
+        .message__upper-info__time
+          投稿した日時
+      .message__text
+        おはよう
   .form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
