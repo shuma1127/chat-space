@@ -3,13 +3,15 @@
     .side-header__box
       .side-header__box__user-name
         = current_user.name
-      .side-header__box__menu
-        = link_to "#", class: "edit__btn" do
-          = link_to new_group_path do
-            = icon('fas', 'edit', class: 'icon')
-        = link_to "#", class: "cog__btn" do
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: 'icon')
+      %ul.side-header__box__menu
+        %li.list
+          = link_to "#", class: "edit__btn" do
+            = link_to new_group_path do
+              = icon('fas', 'edit', class: 'icon')
+        %li.list
+          = link_to "#", class: "cog__btn" do
+            = link_to edit_user_path(current_user) do
+              = icon('fas', 'cog', class: 'icon')
 
   .groups
     - current_user.groups.each do |group|
