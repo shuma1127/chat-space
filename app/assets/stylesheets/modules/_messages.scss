@@ -40,12 +40,15 @@
     margin-bottom: 40px;
     color: #ffffff;
     font-weight: bold;
-    &__name{
-      font-size:15px;
-      margin-bottom: 5px;
+    a {
+      text-decoration: none;
     }
-    &__latest-messege{
-      font-size: 11px;
+      &__name{
+        font-size:15px;
+        margin-bottom: 5px;
+      }
+      &__latest-messege{
+        font-size: 11px;
     }
   }
 }
@@ -140,13 +143,12 @@
   padding: 20px 40px;
   background-color: #d2d2d2;
 
-  .new-message {
+  .new_message {
     display: flex;
     .input-box{
-      display: flex;
       width: 100%;
       position: relative;
-      &__text {
+      &__type {
         height: 50px;
         width: 100%;
         padding: 0 40px 0 10px;
