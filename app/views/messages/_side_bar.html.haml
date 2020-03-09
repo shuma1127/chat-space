@@ -14,7 +14,7 @@
   .groups
     - current_user.groups.each do |group|
       .group
-        = link_to '#', class: "group" do
+        = link_to group_messages_path(group), class: "group" do
           .group__name
             = group.name
           .group__latest-messege
