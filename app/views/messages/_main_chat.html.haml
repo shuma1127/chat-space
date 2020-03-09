@@ -2,14 +2,18 @@
   .main-header
     .main-header__left__box
       .main-header__left__box__current__group
-        test
+        = @group.name
       .main-header__left__box__menber__list
-        menber:投稿者
+        menber:
+        .main-header__left__box__menber__list__menber
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .main-header__right-box
-      = link_to "#", class: "edit__btn" do
+      = link_to edit_group_path(@group), class: "edit__btn" do
         Edit
   .messages
-    = render @messages
+    = render @messages 
+    -# .message
     -#   .message__upper-info
     -#     .message__upper-info__talker
     -#       投稿者
@@ -18,7 +22,6 @@
     -#   .message__text
     -#     おはよう
     -# .message
-      
     -#   .message__upper-info
     -#     .message__upper-info__talker
     -#       投稿者
@@ -34,3 +37,5 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'input-box__label__image'
       = f.submit 'Send', class: 'submit-btn'
+
+  
