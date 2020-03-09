@@ -9,36 +9,28 @@
       = link_to "#", class: "edit__btn" do
         Edit
   .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          投稿者
-        .message__upper-info__time
-          投稿した日時
-      .message__text
-        おはよう
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          投稿者
-        .message__upper-info__time
-          投稿した日時
-      .message__text
-        おはよう
+    = render @messages
+    -#   .message__upper-info
+    -#     .message__upper-info__talker
+    -#       投稿者
+    -#     .message__upper-info__time
+    -#       投稿した日時
+    -#   .message__text
+    -#     おはよう
+    -# .message
+      
+    -#   .message__upper-info
+    -#     .message__upper-info__talker
+    -#       投稿者
+    -#     .message__upper-info__time
+    -#       投稿した日時
+    -#   .message__text
+    -#     おはよう
   .form
     = form_for [@group, @message] do |f|
       .input-box
-        = f.text_field :content, class: 'input-box__type', placeholder: 'type a message'
-        = f.label :image, class: 'input-box__image' do
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__label' do
           = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'input-box__image__file'
+          = f.file_field :image, class: 'input-box__label__image'
       = f.submit 'Send', class: 'submit-btn'
-
-  -# .form
-  -#   %form.new-message
-  -#     .input-box
-  -#       %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-  -#       = f.label :image, class: 'input-box__image' do
-  -#         = icon('fas', 'image', class: 'icon')
-  -#         %input{type: "file", class: 'input-box__image__file'
-  -#     %input{type: "submit", class: "submit-btn"}
