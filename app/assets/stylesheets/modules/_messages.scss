@@ -21,13 +21,16 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: 24px;#
+        height: 24px;
         font-weight: bold;
         background-color: #253141;
         color: #ffffff;
-        a {
-          text-decoration: none;
-          color: #ffffff;
+        &__menu {
+          display: flex;
+          }
+          a {
+            text-decoration: none;
+            color: #ffffff;
         }
       }
     }
