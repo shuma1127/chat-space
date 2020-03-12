@@ -1,52 +1,52 @@
 $(function(){
   var buildHTML = function(message) {
     if (message.content && message.image) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-                  `<div class="upper-info">` +
-                    `<div class="upper-info__talker">` +
-                      message.user_name +
-                    `</div>` +
-                    `<div class="upper-info__time">` +
-                      message.created_at +
-                    `</div>` +
-                  `</div>` +
-                  `<div class="message__text">` +
-                    `<p class="lower-message__content">` +
-                      message.content +
-                    `</p>` +
-                    `<img src="` + message.image + `" class="lower-message__image" >` +
-                  `</div>` + 
-                `</div>`
+    var html = `<div class="message" data-message-id= ${message.id} >
+                  <div class="upper-info">
+                    <div class="upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-info__time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    <p class="lower-message__content">
+                      ${message.content} 
+                    </p>
+                    <img src="${message.image}" class="lower-message__image" >
+                  </div>
+                </div>`
   } else if (message.content) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-                  `<div class="upper-info">` +
-                    `<div class="upper-info__talker">` +
-                      message.user_name +
-                    `</div>` +
-                    `<div class="upper-info__time">` +
-                      message.created_at +
-                    `</div>` +
-                  `</div>` +
-                  `<div class="message__text">` +
-                    `<p class="lower-message__content">` +
-                      message.content +
-                    `</p>` +
-                  `</div>` + 
-                `</div>`
+    var html = `<div class="message" data-message-id= ${message.id}>
+                  <div class="upper-info">
+                    <div class="upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-info__time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                  </div>
+                </div>`
   } else if (message.image) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-                  `<div class="upper-info">` +
-                    `<div class="upper-info__talker">` +
-                      message.user_name +
-                    `</div>` +
-                    `<div class="upper-info__time">` +
-                      message.created_at +
-                    `</div>` +
-                  `</div>` +
-                  `<div class="message__text">` +
-                    `<img src="` + message.image + `" class="lower-message__image" >` +
-                  `</div>` + 
-                `</div>`
+    var html = `<div class="message" data-message-id=${message.id}>
+                  <div class="upper-info">
+                    <div class="upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-info__time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    <img src="${message.image}" class="lower-message__image" >
+                  </div> 
+                </div>`
     };
     return html;
   };
